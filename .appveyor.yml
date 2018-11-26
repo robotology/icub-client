@@ -28,8 +28,7 @@ install:
   - cmd: timeout 10
   - cmd: dir "c:\Program Files (x86)\robotology"
   - cmd: dir "c:\Program Files (x86)\robotology\opencv-3.4.2-v14-x86"
-  - cmd: dir "c:\Program Files (x86)\robotology\opencv-3.4.2-v14-x86\x86"
-  - cmd: dir "c:\Program Files (x86)\robotology\opencv-3.4.2-v14-x86\x86\vc14"
+  - cmd: type "C:/Program Files (x86)/robotology/opencv-3.4.2-v14-x86/OpenCVConfig.cmake"
   
   - cmd: git clone https://github.com/robotology/icub-contrib-common.git c:\dev\icub-contrib-common
   - cmd: cd c:\dev\icub-contrib-common
