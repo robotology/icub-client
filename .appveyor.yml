@@ -29,8 +29,9 @@ install:
   - cmd: dir "c:\Program Files\robotology"
 
   # OpenCV
-  - ps: wget 'https://sourceforge.net/projects/opencvlibrary/files/3.4.6/opencv-3.4.6-vc14_vc15.exe/download' -outfile opencv-3.4.6-vc14_vc15.exe
-  - cmd: opencv-3.4.6-vc14_vc15.exe -o"C:\Program Files" -y
+  - cmd: appveyor DownloadFile "https://sourceforge.net/projects/opencvlibrary/files/3.4.6/opencv-3.4.6-vc14_vc15.exe/download" -FileName "c:\dev\opencv-3.4.6-vc14_vc15.exe"
+  - cmd: dir "d:\dev"
+  - cmd: c:\dev\opencv-3.4.6-vc14_vc15.exe -o"C:\Program Files" -y
   - ECHO "Installed OpenCV:"
   - cmd: dir "C:/Program Files/opencv/build"
   - set PATH=%PATH%;C:\Program Files\opencv\build\x64\vc14\bin
