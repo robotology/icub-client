@@ -22,6 +22,9 @@ environment:
   CMAKE_PREFIX_PATH: c:/iCubContrib
 
 install:
+  - call "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64
+  - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_amd64
+
   - cmd: appveyor DownloadFile "https://github.com/robotology/yarp/releases/download/v3.1.0/yarp_3.1.0_v14_x86_amd64_1.exe" -FileName "c:\dev\yarp.exe"
   - cmd: appveyor DownloadFile "https://github.com/robotology/icub-main/releases/download/v1.12.0/iCub_1.12.0_v14_x86_amd64_1.exe" -FileName "c:\dev\icub.exe"
 
