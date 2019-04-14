@@ -62,7 +62,7 @@ build_script:
   - cd c:\dev\icub-hri\
   - md build
   - cd build
-  - cmake -G"Visual Studio 14 2015 Win64" -DCOMPILE_TESTS=TRUE ..
+  - cmake -G"Visual Studio 14 2015 Win64" -DICUBCLIENT_BUILD_IOL2OPC=FALSE -DICUBCLIENT_BUILD_RFH=FALSE -DICUBCLIENT_COMPILE_TESTS=TRUE ..
   - msbuild /m /p:Configuration=Release /p:Platform="x64" icubclient.sln
 
 notifications:

@@ -2,7 +2,9 @@
 # Authors: Matej Hoffmann
 # CopyPolicy: Released under the terms of the GNU GPL v2.0.
 
-if(ICUB_USE_IPOPT)
+set(ICUBCLIENT_BUILD_RFH TRUE CACHE BOOL "Enable compilation of referenceFrameHandler")
+
+if(ICUB_USE_IPOPT AND ICUBCLIENT_BUILD_RFH)
     add_subdirectory(referenceFrameHandler)
 endif()
 
