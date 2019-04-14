@@ -8,13 +8,13 @@ branches:
 clone_folder: c:\dev\icub-hri
 
 environment:
-  ACE_ROOT:          c:/Program Files (x86)/robotology/ace-6.5.0_v14_x86
-  GSL_DIR:           c:/Program Files (x86)/robotology/gsl-1.14
-  IPOPT_DIR:         c:/Program Files (x86)/robotology/ipopt-3.12.7
+  ACE_ROOT:          c:/Program Files/robotology/ACE-6.5.0_v14_x86_amd64
+  GSL_DIR:           c:/Program Files/robotology/gsl-1.14
+  IPOPT_DIR:         c:/Program Files/robotology/ipopt-3.12.7
   OpenCV_DIR:        C:/Program Files/opencv/build
-  Qt5_DIR:           c:/Program Files (x86)/robotology/Qt-5.11.1_v14_x86
-  YARP_DIR:          c:/Program Files (x86)/robotology/yarp-3.1.0
-  ICUB_DIR:          c:/Program Files (x86)/robotology/icub-1.12.0
+  Qt5_DIR:           c:/Program Files/robotology/Qt-5.11.1_v14_x86_amd64
+  YARP_DIR:          c:/Program Files/robotology/yarp-3.1.0
+  ICUB_DIR:          c:/Program Files/robotology/icub-1.12.0
   ICUBcontrib_DIR:   c:/iCubContrib
   CMAKE_PREFIX_PATH: c:/iCubContrib
 
@@ -27,7 +27,6 @@ install:
   - cmd: start "" /WAIT "c:\dev\icub.exe" /S
   - cmd: timeout 10
   - cmd: dir "c:\Program Files\robotology"
-  - cmd: dir "c:\Program Files (x86)\robotology"
 
   # OpenCV
   - ps: wget 'https://sourceforge.net/projects/opencvlibrary/files/3.4.6/opencv-3.4.6-vc14_vc15.exe/download' -outfile opencv-3.4.6-vc14_vc15.exe
