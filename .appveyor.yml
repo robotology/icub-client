@@ -46,14 +46,14 @@ install:
   - cmd: cd c:\dev\icub-contrib-common
   - cmd: md build
   - cmd: cd build
-  - cmd: cmake -DCMAKE_INSTALL_PREFIX=c:/iCubContrib -G"Visual Studio 14" ..
+  - cmd: cmake -DCMAKE_INSTALL_PREFIX=c:/iCubContrib -G"Visual Studio 14 2015 Win64" ..
   - cmd: msbuild /m /p:Configuration=Release /p:Platform="x64" INSTALL.vcxproj
 
   - cmd: git clone https://github.com/robotology/kinect-wrapper.git c:\dev\kinect-wrapper
   - cmd: cd c:\dev\kinect-wrapper
   - cmd: md build
   - cmd: cd build
-  - cmd: cmake -G"Visual Studio 14" ..
+  - cmd: cmake -G"Visual Studio 14 2015 Win64" ..
   - cmd: msbuild /m /p:Configuration=Release /p:Platform="x64" INSTALL.vcxproj
 
 build:
@@ -62,7 +62,7 @@ build_script:
   - cd c:\dev\icub-hri\
   - md build
   - cd build
-  - cmake -G"Visual Studio 14" -DICUBCLIENT_BUILD_IOL2OPC=FALSE -DCOMPILE_TESTS=TRUE ..
+  - cmake -G"Visual Studio 14 2015 Win64" -DCOMPILE_TESTS=TRUE ..
   - msbuild /m /p:Configuration=Release /p:Platform="x64" icubclient.sln
 
 notifications:
