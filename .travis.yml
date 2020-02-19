@@ -78,13 +78,13 @@ install:
   - sudo make install
   - cd ../../
 
-  - git clone --depth 1 https://github.com/robotology/kinect-wrapper.git
-  - cd kinect-wrapper
-  - mkdir build
-  - cd build
-  - cmake -DCMAKE_BUILD_TYPE=Release ..
-  - sudo make install
-  - cd ../../
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then git clone --depth 1 https://github.com/robotology/kinect-wrapper.git; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cd kinect-wrapper; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then mkdir build; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cd build; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cmake -DCMAKE_BUILD_TYPE=Release ..; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo make install; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cd ../../; fi
 
   - cd icub-hri
 
