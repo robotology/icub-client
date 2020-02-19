@@ -16,7 +16,9 @@ environment:
   CMAKE_PREFIX_PATH: c:/iCubContrib
 
 install:
-  - call "C:\Program Files (x86)\Microsoft Visual Studio 16.0\VC\vcvarsall.bat" x86_amd64
+  - cmd: dir "C:\Program Files (x86)\"
+  - cmd: dir "C:\Program Files\"
+  # - call "C:\Program Files (x86)\Microsoft Visual Studio 16.0\VC\vcvarsall.bat" x86_amd64
 
   - cmd: appveyor DownloadFile "https://github.com/robotology-playground/robotology-superbuild-dependencies/releases/download/v0.0.3/vcpkg-robotology.zip" -FileName "c:\robotology\vcpkg-robotology.zip"
   - cmd: cd c:\robotology
