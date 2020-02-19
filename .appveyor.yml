@@ -28,7 +28,7 @@ install:
   - cmd: cd c:\robotology\yarp
   - cmd: md build
   - cmd: cd build
-  - cmd: cmake -G"Visual Studio 16 2019 Win64" ..
+  - cmd: cmake -G"Visual Studio 16 2019" ..
   - cmd: msbuild /m /p:Configuration=Release /p:Platform="x64" INSTALL.vcxproj
   
   # icub-main
@@ -36,7 +36,7 @@ install:
   - cmd: cd c:\robotology\icub-main
   - cmd: md build
   - cmd: cd build
-  - cmd: cmake -G"Visual Studio 16 2019 Win64" ..
+  - cmd: cmake -G"Visual Studio 16 2019" ..
   - cmd: msbuild /m /p:Configuration=Release /p:Platform="x64" INSTALL.vcxproj
 
   # icub-contrib-common
@@ -44,7 +44,7 @@ install:
   - cmd: cd c:\robotology\icub-contrib-common
   - cmd: md build
   - cmd: cd build
-  - cmd: cmake -DCMAKE_INSTALL_PREFIX=c:/iCubContrib -G"Visual Studio 16 2019 Win64" ..
+  - cmd: cmake -DCMAKE_INSTALL_PREFIX=c:/iCubContrib -G"Visual Studio 16 2019" ..
   - cmd: msbuild /m /p:Configuration=Release /p:Platform="x64" INSTALL.vcxproj
 
   # kinect-wrapper
@@ -52,7 +52,7 @@ install:
   - cmd: cd c:\robotology\kinect-wrapper
   - cmd: md build
   - cmd: cd build
-  - cmd: cmake -G"Visual Studio 16 2019 Win64" ..
+  - cmd: cmake -G"Visual Studio 16 2019" ..
   - cmd: msbuild /m /p:Configuration=Release /p:Platform="x64" INSTALL.vcxproj
 
 build:
@@ -61,7 +61,7 @@ build_script:
   - cd c:\robotology\icub-hri\
   - md build
   - cd build
-  - cmake -G"Visual Studio 16 2019 Win64" -DICUBCLIENT_COMPILE_TESTS=TRUE ..
+  - cmake -G"Visual Studio 16 2019" -DICUBCLIENT_COMPILE_TESTS=TRUE ..
   - msbuild /m /p:Configuration=Release /p:Platform="x64" icubclient.sln
 
 notifications:
