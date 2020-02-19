@@ -35,7 +35,7 @@ install:
   # OS X dependencies
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ls -al; fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis update; fi
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install ace cmake eigen gsl ipopt opencv pkg-config qt5; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install ace cmake eigen gsl ipopt opencv@3 pkg-config qt5; fi
   # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis upgrade python; fi
   # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew tap robotology/cask; fi
   # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install --only-dependencies yarp; fi
