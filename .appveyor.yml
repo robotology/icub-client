@@ -22,7 +22,7 @@ install:
 
   - cmd: appveyor DownloadFile "https://github.com/robotology-playground/robotology-superbuild-dependencies/releases/download/v0.0.3/vcpkg-robotology.zip" -FileName "c:\robotology\vcpkg-robotology.zip"
   - cmd: cd c:\robotology
-  - cmd: 7z x vcpkg-robotology.zip
+  - cmd: 7z x vcpkg-robotology.zip -oc:\robotology\vcpkg-robology
   - cmd: dir c:\robotology
 
   # yarp
@@ -30,7 +30,7 @@ install:
   - cmd: cd c:\robotology\yarp
   - cmd: md build
   - cmd: cd build
-  - cmd: cmake -G"Visual Studio 16 2019" ..
+  - cmd: cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=c:/robotology/vcpkg-robology/scripts/buildsystems/vcpkg.cmake -G"Visual Studio 16 2019" ..
   - cmd: msbuild /m /p:Configuration=Release /p:Platform="x64" INSTALL.vcxproj
   
   # icub-main
@@ -38,7 +38,7 @@ install:
   - cmd: cd c:\robotology\icub-main
   - cmd: md build
   - cmd: cd build
-  - cmd: cmake -G"Visual Studio 16 2019" ..
+  - cmd: cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=c:/robotology/vcpkg-robology/scripts/buildsystems/vcpkg.cmake -G"Visual Studio 16 2019" ..
   - cmd: msbuild /m /p:Configuration=Release /p:Platform="x64" INSTALL.vcxproj
 
   # icub-contrib-common
@@ -46,7 +46,7 @@ install:
   - cmd: cd c:\robotology\icub-contrib-common
   - cmd: md build
   - cmd: cd build
-  - cmd: cmake -DCMAKE_INSTALL_PREFIX=c:/iCubContrib -G"Visual Studio 16 2019" ..
+  - cmd: cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=c:/robotology/vcpkg-robology/scripts/buildsystems/vcpkg.cmake -DCMAKE_INSTALL_PREFIX=c:/iCubContrib -G"Visual Studio 16 2019" ..
   - cmd: msbuild /m /p:Configuration=Release /p:Platform="x64" INSTALL.vcxproj
 
   # kinect-wrapper
@@ -54,7 +54,7 @@ install:
   - cmd: cd c:\robotology\kinect-wrapper
   - cmd: md build
   - cmd: cd build
-  - cmd: cmake -G"Visual Studio 16 2019" ..
+  - cmd: cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=c:/robotology/vcpkg-robology/scripts/buildsystems/vcpkg.cmake -G"Visual Studio 16 2019" ..
   - cmd: msbuild /m /p:Configuration=Release /p:Platform="x64" INSTALL.vcxproj
 
 build:
@@ -63,7 +63,7 @@ build_script:
   - cd c:\robotology\icub-hri\
   - md build
   - cd build
-  - cmake -G"Visual Studio 16 2019" -DICUBCLIENT_COMPILE_TESTS=TRUE ..
+  - cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=c:/robotology/vcpkg-robology/scripts/buildsystems/vcpkg.cmake -G"Visual Studio 16 2019" -DICUBCLIENT_COMPILE_TESTS=TRUE ..
   - msbuild /m /p:Configuration=Release /p:Platform="x64" icubclient.sln
 
 notifications:
