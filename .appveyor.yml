@@ -6,6 +6,8 @@ platform:
 branches:
   only:
   - master
+  
+image: Visual Studio 2019
 
 clone_folder: c:\robotology\icub-hri
 
