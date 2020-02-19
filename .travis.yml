@@ -37,7 +37,7 @@ install:
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis update; fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install ace gsl ipopt opencv@3; fi
   # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then rm '/usr/local/bin/f2py'; fi
-  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew link --force opencv@3; fi  # add QT5 to path so that it can be found by CMake
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew link --force opencv@3; fi
   # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH="$PATH:/usr/local/opt/qt/bin"; fi
 
   - cd ..
