@@ -49,6 +49,16 @@ install:
   - cd ..
 
   - pwd
+  
+  - git clone --depth 1 https://github.com/robotology/ycm.git
+  - cd ycm
+  - export YCM_ROOT=$(pwd)
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_BUILD_TYPE=Release ..
+  - sudo make install
+  - cd ../../
+  
   - git clone --depth 1 https://github.com/robotology/yarp.git
   - cd yarp
   - export YARP_ROOT=$(pwd)
