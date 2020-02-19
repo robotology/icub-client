@@ -35,7 +35,7 @@ install:
   # OS X dependencies
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ls -al; fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; fi
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis upgrade python; fi
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis upgrade python; fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew tap robotology/cask; fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install --only-dependencies yarp; fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install gsl goocanvas sdl sdl_gfx sdl_image; fi
