@@ -71,7 +71,7 @@ build_script:
   - cd c:\robotology\icub-hri\
   - md build
   - cd build
-  - cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=c:/robotology/vcpkg-robology/scripts/buildsystems/vcpkg.cmake -G"Visual Studio 16 2019" -DICUBCLIENT_COMPILE_TESTS=TRUE ..
+  - cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=c:/robotology/vcpkg-robology/scripts/buildsystems/vcpkg.cmake -G"Visual Studio 16 2019" -DICUBCLIENT_COMPILE_TESTS=TRUE -DICUBCLIENT_BUILD_IOL2OPC=FALSE ..
   - msbuild /m /p:Configuration=Release /p:Platform="x64" icubclient.sln
 
 notifications:
