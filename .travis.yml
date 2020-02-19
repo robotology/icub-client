@@ -34,17 +34,18 @@ install:
 
   # OS X dependencies
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ls -al; fi
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update; fi
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis upgrade python; fi
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew tap robotology/cask; fi
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install --only-dependencies yarp; fi
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install gsl goocanvas sdl sdl_gfx sdl_image; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis update; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install ace cmake eigen gsl ipopt opencv pkg-config qt5; fi
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis upgrade python; fi
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew tap robotology/cask; fi
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install --only-dependencies yarp; fi
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install gsl goocanvas sdl sdl_gfx sdl_image; fi
   # Fix for opencv and numpy already installed by system
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then rm '/usr/local/bin/f2py'; fi
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then rm -r '/usr/local/lib/python2.7/site-packages/numpy'; fi
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install opencv@3; fi
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew link --force opencv@3; fi  # add QT5 to path so that it can be found by CMake
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH="$PATH:/usr/local/opt/qt/bin"; fi
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then rm '/usr/local/bin/f2py'; fi
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then rm -r '/usr/local/lib/python2.7/site-packages/numpy'; fi
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./brew-helper-travis install opencv@3; fi
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew link --force opencv@3; fi  # add QT5 to path so that it can be found by CMake
+  # - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH="$PATH:/usr/local/opt/qt/bin"; fi
 
   - cd ..
 
