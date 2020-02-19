@@ -25,6 +25,14 @@ install:
   - cmd: 7z x vcpkg-robotology.zip -oc:\robotology\vcpkg-robology
   - cmd: dir c:\robotology
 
+# ycm
+  - cmd: git clone https://github.com/robotology/ycm.git c:\robotology\ycm --depth 1 --branch master
+  - cmd: cd c:\robotology\ycm
+  - cmd: md build
+  - cmd: cd build
+  - cmd: cmake -A x64 -DCMAKE_TOOLCHAIN_FILE=c:/robotology/vcpkg-robology/scripts/buildsystems/vcpkg.cmake -G"Visual Studio 16 2019" ..
+  - cmd: msbuild /m /p:Configuration=Release /p:Platform="x64" INSTALL.vcxproj
+
   # yarp
   - cmd: git clone https://github.com/robotology/yarp.git c:\robotology\yarp --depth 1 --branch master
   - cmd: cd c:\robotology\yarp
